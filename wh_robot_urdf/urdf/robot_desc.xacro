@@ -5,8 +5,8 @@
     <link name="world">
     </link>
 
-    <xacro:include filename="$(find wh_robot_urdf)/urdf/robot_single.xacro">
+    <xacro:include filename="$(find wh_robot_urdf)/urdf/robot_single.xacro"/>
 
-    <xacro:robot name="robot_1" parent="world" pos_x="1.0" pos_y="5.0"/>
+    <xacro:robot name="robot_1" parent="world" pos_x="1.0" pos_y="2.0"/>
 
 </robot>
