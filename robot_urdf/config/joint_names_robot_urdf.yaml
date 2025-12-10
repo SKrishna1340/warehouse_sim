@@ -1,0 +1,11 @@
+controller_joint_names:
+  [
+    "",
+    "jnt_world_to_base_link",
+    "jnt_Base_to_Ax1",
+    "jnt_Ax1_to_Ax2",
+    "jnt_Ax2_to_Ax3",
+    "jnt_Ax3_to_Ax4",
+    "jnt_Ax4_to_Ax5",
+    "jnt_Ax5_to_Ax6",
+  ]

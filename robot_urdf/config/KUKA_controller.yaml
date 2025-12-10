@@ -1,0 +1,48 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 100 # Hz
+    use_sim_time: true
+
+    robot_controller:
+      type: joint_trajectory_controller/JointTrajectoryController #position_controllers/JointGroupPositionController #effort_controllers/JointGroupEffortController  #
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+robot_controller:
+  ros__parameters:
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+      # - effort
+
+    joints:
+      - robot1_jnt_Base_to_Ax1
+      - robot1_jnt_Ax1_to_Ax2
+      - robot1_jnt_Ax2_to_Ax3
+      - robot1_jnt_Ax3_to_Ax4
+      - robot1_jnt_Ax4_to_Ax5
+      - robot1_jnt_Ax5_to_Ax6
+      # - robot2_jnt_Base_to_Ax1
+      # - robot2_jnt_Ax1_to_Ax2
+      # - robot2_jnt_Ax2_to_Ax3
+      # - robot2_jnt_Ax3_to_Ax4
+      # - robot2_jnt_Ax4_to_Ax5
+      # - robot2_jnt_Ax5_to_Ax6
+
+    #allow_nonzero_velocity_at_trajectory_end: true
+
+    # action_monitor_rate: 20.0
+
+    # allow_partial_joints_goal: false
+    # interpolate_from_desired_state: true
+    # constraints:
+    #   stopped_velocity_tolerance: 0.01
+    #   goal_time: 0.0
+    #   joint1:
+    #     trajectory: 0.05
+    #     goal: 0.03

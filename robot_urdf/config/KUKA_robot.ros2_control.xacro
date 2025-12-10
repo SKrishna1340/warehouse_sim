@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="KUKA_robot_ros2_control" params="name prefix">
+
+        <!-- [TODO]: understand loading from a config file at a later time-->
+        <!-- xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions']}"/ -->
+
+        <ros2_control name="${prefix}${name}" type="system">
+        
+            <hardware>
+                <!-- <plugin>mock_components/GenericSystem</plugin> -->
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+            </hardware>
+
+            <xacro:property name="effort_value" value="0.0"/>
+            <xacro:property name="cmd_interface" value="position"/>
+
+            <joint name="${prefix}jnt_Base_to_Ax1">
+                
+                <command_interface name="position"/>
+
+                <state_interface name="position">
+                  <!-- <param name="initial_value">${initial_positions['panda_joint1']}</param> -->
+                  <param name="initial_value">0.0</param>
+                </state_interface>
+                
+                <state_interface name="velocity">
+                    <param name="initial_value">0.0</param>
+                </state_interface>
+
+            </joint>
+            
+            <joint name="${prefix}jnt_Ax1_to_Ax2">
+                
+                <command_interface name="position"/>
+
+                <state_interface name="position">
+                  <!-- <param name="initial_value">${initial_positions['panda_joint1']}</param> -->
+                  <param name="initial_value">0.0</param>
+                </state_interface>
+                <state_interface name="velocity">
+                    <param name="initial_value">0.0</param>
+                </state_interface>
+                
+            </joint>
+            
+            <joint name="${prefix}jnt_Ax2_to_Ax3">
+                
+                <command_interface name="position"/>
+
+                <state_interface name="position">
+                  <!-- <param name="initial_value">${initial_positions['panda_joint1']}</param> -->
+                  <param name="initial_value">0.0</param>
+                </state_interface>
+                <state_interface name="velocity">
+                    <param name="initial_value">0.0</param>
+                </state_interface>
+                
+            </joint>
+            
+            <joint name="${prefix}jnt_Ax3_to_Ax4">
+                
+                <command_interface name="position"/>
+
+                <state_interface name="position">
+                  <!-- <param name="initial_value">${initial_positions['panda_joint1']}</param> -->
+                  <param name="initial_value">0.0</param>
+                </state_interface>
+                <state_interface name="velocity">
+                    <param name="initial_value">0.0</param>
+                </state_interface>
+                
+            </joint>
+            
+            <joint name="${prefix}jnt_Ax4_to_Ax5">
+                
+                <command_interface name="position"/>
+
+                <state_interface name="position">
+                  <!-- <param name="initial_value">${initial_positions['panda_joint1']}</param> -->
+                  <param name="initial_value">0.0</param>
+                </state_interface>
+                <state_interface name="velocity">
+                    <param name="initial_value">0.0</param>
+                </state_interface>
+                
+            </joint>
+            
+            <joint name="${prefix}jnt_Ax5_to_Ax6">
+                
+                <command_interface name="position"/>
+
+                <state_interface name="position">
+                  <!-- <param name="initial_value">${initial_positions['panda_joint1']}</param> -->
+                  <param name="initial_value">0.0</param>
+                </state_interface>
+                <state_interface name="velocity">
+                    <param name="initial_value">0.0</param>
+                </state_interface>
+                
+            </joint>
+    
+        </ros2_control>
+
+    </xacro:macro>
+
+</robot>

@@ -1,0 +1,22 @@
+<sdf version='1.10'>
+  <world name='default'>
+    <gravity>0 0 0</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <!-- <include>
+      <uri>file://<urdf-string></uri>
+      <name>KUKA_robot1</name>
+      <pose>0 0 -1.9984014443252818e-15 -5.5511151231257827e-16 0 0</pose>
+    </include> -->
+  </world>
+</sdf>

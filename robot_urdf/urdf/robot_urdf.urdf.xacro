@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+
+<!-- Edited by Sai Krishna Murakonda -->
+
+<robot name="robot_urdf">
+  <link name="world" />
+
+  <joint name="jnt_world_to_base_link" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.11981 0.00095475 0.10543" rpy="0 0 0" />
+      <mass value="69.419" />
+      <inertia
+        ixx="1.5959"
+        ixy="0.0085722"
+        ixz="0.36667"
+        iyy="3.5014"
+        iyz="-0.0021187"
+        izz="4.272" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.4 0.4 0.4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Ax1">
+    <inertial>
+      <origin xyz="0.21322 0.0074862 0.26077" rpy="0 0 0" />
+      <mass value="112.66" />
+      <inertia
+        ixx="2.9338"
+        ixy="-0.80384"
+        ixz="-1.3414"
+        iyy="9.9259"
+        iyz="-0.19044"
+        izz="9.4935" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_urdf/meshes/Ax1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.4 0.4 0.4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_urdf/meshes/Ax1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="jnt_Base_to_Ax1"
+    type="revolute">
+    <origin
+      xyz="0 -0.21559 0"
+      rpy="1.5708 -0.34738 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Ax1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.04719755"
+      upper="+1.04719755"
+      effort="0"
+      velocity="1" />
+  </joint>
+
+  <link name="Ax2">
+    <inertial>
+      <origin
+        xyz="-0.136832656859279 0.0144078767700652 0.32155414214809"
+        rpy="0 0 0" />
+      <mass
+        value="276.998100922925" />
+      <inertia
+        ixx="318.852709801833"
+        ixy="0.776560972222151"
+        ixz="-176.545924815262"
+        iyy="440.992384902426"
+        iyz="2.83426651703951"
+        izz="130.06696817012" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="jnt_Ax1_to_Ax2"
+    type="revolute">
+    <origin
+      xyz="0.73 0 0.32441"
+      rpy="0 0.36697 0" />
+    <parent
+      link="Ax1" />
+    <child
+      link="Ax2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.04719755"
+      upper="+1.04719755"
+      effort="0"
+      velocity="1" />
+  </joint>
+
+  <link name="Ax3">
+    <inertial>
+      <origin
+        xyz="0.372143478673027 -4.17118121699422E-05 0.106533438863164"
+        rpy="0 0 0" />
+      <mass
+        value="67.8633341977998" />
+      <inertia
+        ixx="0.581052848871638"
+        ixy="-0.13715563051977"
+        ixz="-0.0109016166060049"
+        iyy="6.85816958909181"
+        iyz="-0.0271578725085325"
+        izz="6.89752904665077" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.4 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax3.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="jnt_Ax2_to_Ax3"
+    type="revolute">
+    <origin
+      xyz="0 0 1.35"
+      rpy="0 -0.42829 0" />
+    <parent
+      link="Ax2" />
+    <child
+      link="Ax3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.04719755"
+      upper="+1.04719755"
+      effort="0"
+      velocity="1" />
+  </joint>
+
+  <link name="Ax4">
+    <inertial>
+      <origin
+        xyz="0.392856388545806 0.00132042157247414 -4.55709173508012E-07"
+        rpy="0 0 0" />
+      <mass
+        value="17.1103007358543" />
+      <inertia
+        ixx="0.0705705137136241"
+        ixy="-0.010191314944453"
+        ixz="8.14143746615133E-06"
+        iyy="0.798703820206423"
+        iyz="-7.86396144529522E-07"
+        izz="0.798093040071735" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="jnt_Ax3_to_Ax4"
+    type="revolute">
+    <origin
+      xyz="0.9909 0 0.115"
+      rpy="0.083358 0 0" />
+    <parent
+      link="Ax3" />
+    <child
+      link="Ax4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.04719755"
+      upper="+1.04719755"
+      effort="0"
+      velocity="1" />
+  </joint>
+
+  <link name="Ax5">
+    <inertial>
+      <origin
+        xyz="0.051767116658477 0.0338271406479826 -4.43843200792493E-05"
+        rpy="0 0 0" />
+      <mass
+        value="6.83021133378002" />
+      <inertia
+        ixx="0.0611665262361527"
+        ixy="0.0149901526275177"
+        ixz="1.89494897224055E-05"
+        iyy="0.054041031435701"
+        iyz="3.52407908043246E-05"
+        izz="0.08587461873486" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax5.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="jnt_Ax4_to_Ax5"
+    type="revolute">
+    <origin
+      xyz="0.8291 0 0"
+      rpy="0 0.043548 0" />
+    <parent
+      link="Ax4" />
+    <child
+      link="Ax5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.04719755"
+      upper="+1.04719755"
+      effort="0"
+      velocity="1" />
+  </joint>
+
+  <link name="Ax6">
+    <inertial>
+      <origin
+        xyz="0.075421153011026 -7.40807057847404E-06 5.04801295508894E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.576833152319335" />
+      <inertia
+        ixx="0.00137814989301989"
+        ixy="6.51907434856228E-08"
+        ixz="-2.53894277537053E-07"
+        iyy="0.000767002773596282"
+        iyz="1.31490592791559E-08"
+        izz="0.000764903466159646" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Ax6.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="jnt_Ax5_to_Ax6"
+    type="revolute">
+    <origin
+      xyz="0.1178 0 0"
+      rpy="0.051821 0 0" />
+    <parent
+      link="Ax5" />
+    <child
+      link="Ax6" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.04719755"
+      upper="+1.04719755"
+      effort="0"
+      velocity="1" />
+  </joint>
+
+  <link name="Tool">
+    <inertial>
+      <origin
+        xyz="0.0043843 -0.0089877 0.10702"
+        rpy="0 0 0" />
+      <mass
+        value="2.5342" />
+      <inertia
+        ixx="0.052186"
+        ixy="-4.7054E-16"
+        ixz="-2.4194E-16"
+        iyy="0.013124"
+        iyz="-1.2094E-15"
+        izz="0.065131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Tool.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_urdf/meshes/Tool.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="FixJnt_Ax6_to_Tool"
+    type="fixed">
+    <origin
+      xyz="0 0.01 0"
+      rpy="-1.5708 1.117 -1.5708" />
+    <parent
+      link="Ax6" />
+    <child
+      link="Tool" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.04719755"
+      upper="+1.04719755"
+      effort="0"
+      velocity="1" />
+  </joint>
+
+</robot>

@@ -1,0 +1,404 @@
+<sdf version='1.12'>
+  <model name='robot_urdf'>
+    <joint name='jnt_world_to_base_link' type='fixed'>
+      <pose relative_to='__model__'>0 0 0 -1.5708 0 0</pose>
+      <parent>world</parent>
+      <child>base_link</child>
+    </joint>
+    <link name='base_link'>
+      <pose relative_to='jnt_world_to_base_link'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.11981 0.00095474999999999998 0.10543 0 0 0</pose>
+        <mass>69.418999999999997</mass>
+        <inertia>
+          <ixx>1.5959000000000001</ixx>
+          <ixy>0.0085722000000000003</ixy>
+          <ixz>0.36667</ixz>
+          <iyy>3.5013999999999998</iyy>
+          <iyz>-0.0021186999999999998</iyz>
+          <izz>4.2720000000000002</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='jnt_Base_to_Ax1' type='revolute'>
+      <pose relative_to='base_link'>0 -0.21559 0 1.5708 -0.34738000000000008 0</pose>
+      <parent>base_link</parent>
+      <child>Ax1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.0471975499999999</lower>
+          <upper>1.0471975499999999</upper>
+          <effort>0</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Ax1'>
+      <pose relative_to='jnt_Base_to_Ax1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.21321999999999999 0.0074862000000000001 0.26077 0 0 0</pose>
+        <mass>112.66</mass>
+        <inertia>
+          <ixx>2.9338000000000002</ixx>
+          <ixy>-0.80384</ixy>
+          <ixz>-1.3413999999999999</ixz>
+          <iyy>9.9259000000000004</iyy>
+          <iyz>-0.19044</iyz>
+          <izz>9.4934999999999992</izz>
+        </inertia>
+      </inertial>
+      <collision name='Ax1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Ax1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='jnt_Ax1_to_Ax2' type='revolute'>
+      <pose relative_to='Ax1'>0.72999999999999998 0 0.32440999999999998 0 0.36697000000000002 0</pose>
+      <parent>Ax1</parent>
+      <child>Ax2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.0471975499999999</lower>
+          <upper>1.0471975499999999</upper>
+          <effort>0</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Ax2'>
+      <pose relative_to='jnt_Ax1_to_Ax2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.13683265685927901 0.014407876770065201 0.32155414214809003 0 0 0</pose>
+        <mass>276.998100922925</mass>
+        <inertia>
+          <ixx>318.85270980183299</ixx>
+          <ixy>0.77656097222215104</ixy>
+          <ixz>-176.545924815262</ixz>
+          <iyy>440.99238490242601</iyy>
+          <iyz>2.8342665170395098</iyz>
+          <izz>130.06696817011999</izz>
+        </inertia>
+      </inertial>
+      <collision name='Ax2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Ax2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='jnt_Ax2_to_Ax3' type='revolute'>
+      <pose relative_to='Ax2'>0 0 1.3500000000000001 0 -0.42829 0</pose>
+      <parent>Ax2</parent>
+      <child>Ax3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.0471975499999999</lower>
+          <upper>1.0471975499999999</upper>
+          <effort>0</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Ax3'>
+      <pose relative_to='jnt_Ax2_to_Ax3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.372143478673027 -4.1711812169942201e-05 0.10653343886316401 0 0 0</pose>
+        <mass>67.863334197799801</mass>
+        <inertia>
+          <ixx>0.58105284887163799</ixx>
+          <ixy>-0.13715563051977001</ixy>
+          <ixz>-0.0109016166060049</ixz>
+          <iyy>6.8581695890918102</iyy>
+          <iyz>-0.0271578725085325</iyz>
+          <izz>6.8975290466507699</izz>
+        </inertia>
+      </inertial>
+      <collision name='Ax3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Ax3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 0.5 0 1</diffuse>
+          <ambient>1 0.5 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='jnt_Ax3_to_Ax4' type='revolute'>
+      <pose relative_to='Ax3'>0.9909 0 0.115 0.083358000000000002 0 0</pose>
+      <parent>Ax3</parent>
+      <child>Ax4</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.0471975499999999</lower>
+          <upper>1.0471975499999999</upper>
+          <effort>0</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Ax4'>
+      <pose relative_to='jnt_Ax3_to_Ax4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.39285638854580601 0.0013204215724741399 -4.5570917350801199e-07 0 0 0</pose>
+        <mass>17.110300735854299</mass>
+        <inertia>
+          <ixx>0.070570513713624106</ixx>
+          <ixy>-0.010191314944453</ixy>
+          <ixz>8.1414374661513308e-06</ixz>
+          <iyy>0.79870382020642305</iyy>
+          <iyz>-7.86396144529522e-07</iyz>
+          <izz>0.79809304007173498</izz>
+        </inertia>
+      </inertial>
+      <collision name='Ax4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Ax4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax4.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='jnt_Ax4_to_Ax5' type='revolute'>
+      <pose relative_to='Ax4'>0.82909999999999995 0 0 0 0.043548000000000003 0</pose>
+      <parent>Ax4</parent>
+      <child>Ax5</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.0471975499999999</lower>
+          <upper>1.0471975499999999</upper>
+          <effort>0</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Ax5'>
+      <pose relative_to='jnt_Ax4_to_Ax5'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.051767116658476997 0.033827140647982597 -4.43843200792493e-05 0 0 0</pose>
+        <mass>6.8302113337800199</mass>
+        <inertia>
+          <ixx>0.0611665262361527</ixx>
+          <ixy>0.014990152627517701</ixy>
+          <ixz>1.8949489722405499e-05</ixz>
+          <iyy>0.054041031435700999</iyy>
+          <iyz>3.52407908043246e-05</iyz>
+          <izz>0.085874618734860006</izz>
+        </inertia>
+      </inertial>
+      <collision name='Ax5_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Ax5_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax5.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='jnt_Ax5_to_Ax6' type='revolute'>
+      <pose relative_to='Ax5'>0.1178 0 0 0.051820999999999985 0 0</pose>
+      <parent>Ax5</parent>
+      <child>Ax6</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.0471975499999999</lower>
+          <upper>1.0471975499999999</upper>
+          <effort>0</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Ax6'>
+      <pose relative_to='jnt_Ax5_to_Ax6'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.10116108720486949 -1.4400899133656471e-06 8.7899878657093376e-06 0 0 0</pose>
+        <mass>3.1110331523193349</mass>
+        <inertia>
+          <ixx>0.066509151148981246</ixx>
+          <ixy>-3.5349522715423531e-08</ixy>
+          <ixz>4.7879178456856348e-07</ixz>
+          <iyy>0.021867018229571249</iyy>
+          <iyz>0.015390909185967149</iyz>
+          <izz>0.045913226231310382</izz>
+        </inertia>
+      </inertial>
+      <collision name='Ax6_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax6.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='Ax6_fixed_joint_lump__Tool_collision_1'>
+        <pose>0 0.01 0 -1.5707999999999995 1.1170000000000004 -1.5707999999999995</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Tool.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Ax6_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Ax6.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='Ax6_fixed_joint_lump__Tool_visual_1'>
+        <pose>0 0.01 0 -1.5707999999999995 1.1170000000000004 -1.5707999999999995</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/mskrishna/ros2_ws/src/robot_urdf/meshes/Tool.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <frame name='FixJnt_Ax6_to_Tool' attached_to='Ax6'>
+      <pose>0 0.01 0 -1.5707999999999989 1.1170000000000011 -1.5707999999999998</pose>
+    </frame>
+    <frame name='Tool' attached_to='FixJnt_Ax6_to_Tool'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

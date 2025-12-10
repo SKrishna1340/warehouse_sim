@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="KUKA_Robots">
+
+    <!-- undo these when needed -->
+    <!-- <xacro:arg name="left_initial_positions_file" default="$(find robot_urdf)/config/robot_1_initial_positions.yaml"/>
+    <xacro:arg name="right_initial_positions_file" default="$(find robot_urdf)/config/robot_2_initial_positions.yaml"/> -->
+
+    <!-- Root link -->
+    <link name="world"/>
+
+    <!-- Xacro imports -->
+    <xacro:include filename="$(find robot_urdf)/urdf/KUKA_robot_macro.xacro" />
+
+    <!-- robot1 -->
+    <xacro:KUKA_robot
+        name="KUKA_robot"
+        prefix="robot1_"
+        parent="world">
+        <origin xyz="0 -2.5 0" rpy="-1.5708 0 0" />
+    </xacro:KUKA_robot>
+
+    <!-- robot2 -->
+    <!-- <xacro:KUKA_robot
+        name="KUKA_robot"
+        prefix="robot2_"
+        parent="world">
+        <origin xyz="0 2.5 0" rpy="-1.5708 0 -1.5708" />
+    </xacro:KUKA_robot> -->
+</robot>
+
+<!-- initial_positions_file="$(arg right_initial_positions_file)" -->
+<!-- initial_positions_file="$(arg robot1_initial_positions_file)"> -->

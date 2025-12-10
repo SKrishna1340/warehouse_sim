@@ -2,8 +2,10 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>wh_commander</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <version>0.1.0</version>
+  <description>
+  Overview package that sets and starts the simulation. Contains the config file that relate to the overall simulation which can be modified as necessary.
+  </description>
   <maintainer email="33370500+SKrishna1340@users.noreply.github.com">mskrishna</maintainer>
   <license>Apache-2.0</license>
 
@@ -11,6 +13,8 @@
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
+
+  <exec_depend>rclcpp</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
