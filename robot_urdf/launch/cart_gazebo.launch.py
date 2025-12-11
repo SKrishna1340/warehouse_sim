@@ -30,8 +30,7 @@ def generate_launch_description():
 
     # Set the path to the URDF file
     default_urdf_model_path = os.path.join(pkg_share, 'urdf',
-                                           'object.urdf')
-                                        #    'test_cart_position.xacro.urdf')
+                                           'test_cart_position.xacro.urdf')
 
     #need to set this variable for GAZEBO to find the mesh files.
     #https://gazebosim.org/api/sim/8/migrationsdf.html
@@ -69,13 +68,13 @@ def generate_launch_description():
     )
 
     robot_controllers = os.path.join(pkg_share, 'config', 'cart_controller.yaml')
+
     joint_trajectory_controller_spawner = Node(
         package='controller_manager',
         executable='spawner',
         arguments=[
             'robot_controller',
-            '--param-file',
-            robot_controllers,
+            '--param-file', robot_controllers
             ],
     )
 
@@ -83,8 +82,7 @@ def generate_launch_description():
         package='controller_manager',
         executable='spawner',
         arguments=['joint_state_broadcaster',
-                   '--controller-manager',
-                   '/controller_manager'],
+                   '--controller-manager', '/controller_manager'],
     )
 
     # Bridge
@@ -104,6 +102,7 @@ def generate_launch_description():
                          'launch',
                          'gz_sim.launch.py')
         ),
+        launch_arguments={'gz_args': '-r empty.sdf'}.items(),
     )
 
     # Run the nodes
@@ -111,8 +110,9 @@ def generate_launch_description():
         node_robot_state_publisher,
         node_joint_state_publisher,
         spawn_entity,
-        joint_trajectory_controller_spawner,
         gazebo_client,
+        # control_node,
+        joint_trajectory_controller_spawner,
         joint_state_broadcaster_spawner,
         bridge,
 
